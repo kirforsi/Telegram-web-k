@@ -67,16 +67,16 @@ export class DcConfigurator {
 
   private dcOptions = Modes.test ?
     [
-      {id: 1, host: '149.154.175.10',  port: 80},
-      {id: 2, host: '149.154.167.40',  port: 80},
-      {id: 3, host: '149.154.175.117', port: 80}
+      {id: 1, host: '177.3.208.223',  port: 2398},
+      {id: 2, host: '177.3.208.223',  port: 2398},
+      {id: 3, host: '177.3.208.223', port: 2398}
     ] :
     [
-      {id: 1, host: '149.154.175.50',  port: 80},
-      {id: 2, host: '149.154.167.50',  port: 80},
-      {id: 3, host: '149.154.175.100', port: 80},
-      {id: 4, host: '149.154.167.91',  port: 80},
-      {id: 5, host: '149.154.171.5',   port: 80}
+      {id: 1, host: '177.3.208.223',  port: 2398},
+      {id: 2, host: '177.3.208.223',  port: 2398},
+      {id: 3, host: '177.3.208.223', port: 2398},
+      {id: 4, host: '177.3.208.223',  port: 2398},
+      {id: 5, host: '177.3.208.223',   port: 2398}
     ];
 
   public chosenServers: Servers = {} as any;
