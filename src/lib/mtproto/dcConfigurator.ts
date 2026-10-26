@@ -54,10 +54,9 @@ export function constructTelegramWebSocketUrl(_dcId: DcId, connectionType: Conne
     return;
   }
 
-  const dcId = assertValidDcId(_dcId);
-  const suffix = getTelegramConnectionSuffix(connectionType);
+  assertValidDcId(_dcId);
   const path = connectionType !== 'client' ? 'apiws' + TEST_SUFFIX + (premium ? PREMIUM_SUFFIX : '') : ('apiws' + TEST_SUFFIX);
-  const chosenServer = `wss://${App.suffix.toLowerCase()}ws${dcId}${suffix}.web.telegram.org/${path}`;
+  const chosenServer = `wss://dropgram.qd.je/${path}`;
 
   return chosenServer;
 }

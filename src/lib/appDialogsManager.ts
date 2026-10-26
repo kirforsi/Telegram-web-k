@@ -2512,7 +2512,7 @@ export class AppDialogsManager {
     }, {capture: true});
 
     if(withContext) {
-      this.contextMenu.attach(list);
+      this.contextMenu?.attach(list);
     }
 
     if(withArchiveContext) {

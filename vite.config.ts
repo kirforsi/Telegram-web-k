@@ -95,8 +95,8 @@ const USE_DEV_HTTP2 = !USE_SSL && !process.env.TWEB_PREVIEW && !process.env.VITE
   existsSync(DEV_HTTP2_KEY) && existsSync(DEV_HTTP2_CERT);
 
 const serverOptions: ServerOptions = {
-  host,
-  port: USE_SSL ? 443 : 8080,
+  host: "0.0.0.0",
+  port: 5173,
   fs: {
     allow: [...SERVER_FS_ALLOW],
     // Vite's defaults plus tmp/: it holds auth seeds and other credentials, and bundles that boot
@@ -184,6 +184,9 @@ if(USE_OWN_SOLID) {
 }
 
 export default defineConfig({
+  server: {
+    allowedHosts: true,
+  },
   plugins: [
     // devtools({
     //   /* features options - all disabled by default */
@@ -250,7 +253,6 @@ export default defineConfig({
     globals: true,
     setupFiles: ['./src/tests/setup.ts']
   },
-  server: serverOptions,
   base: '',
   // Pin the dep-optimizer's scan to the real entry (index.html → src/index.ts).
   // Otherwise Vite auto-globs every *.html (stats.html, public/*.html, the icomoon

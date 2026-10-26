@@ -10,6 +10,8 @@ services:
     command: pnpm install
 
   tweb.develop:
+    environment:
+      - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS=dropgram.qd.je
     container_name: tweb.develop
     build:
       context: .
@@ -17,7 +19,7 @@ services:
     volumes:
       - "./:/app"
     ports:
-      - 8080:8080
+      - 5173:5173
     command: pnpm start-in-docker
 
   tweb.production:
@@ -26,4 +28,4 @@ services:
       context: .
       dockerfile: .docker/Dockerfile_production
     ports:
-      - 80:80
+      - 5174:80

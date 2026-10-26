@@ -75,6 +75,7 @@ export function StarGiftBackdrop(props: {
     }).then((canvas) => {
       if(!middleware()) return;
       if(currentEmoji !== props.patternEmoji) return
+      if(!canvas) return;
       canvas.classList.add(styles.canvas, props.canvasClass);
       setPatternCanvas(canvas);
     });
